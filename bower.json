@@ -1,0 +1,22 @@
+{
+  "name": "local.dev",
+  "authors": [
+    "Morten Scheel <morten@mortenscheel.com>"
+  ],
+  "description": "Testing",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "moment": "^2.14.1"
+  }
+}
