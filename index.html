@@ -10,30 +10,25 @@
     <h1>Welcome</h1>
     <label id="label"></label>
     <pre id="debug"></pre>
-    <button class="btn btn-default" id="start-btn">Start</button>
-    <button class="btn btn-default" id="stop-btn">Stop</button>
-    <button class="btn btn-default" id="dump-btn">Dump</button>
+    <button onclick="game.start()" class="btn btn-default" id="start-btn">Start</button>
+    <button onclick="game.stop()" class="btn btn-default" id="stop-btn">Stop</button>
+    <button onclick="game.dump()" class="btn btn-default" id="dump-btn">Dump</button>
+    <div id="canvas-wrap">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
 </div>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/moment/min/moment-with-locales.min.js"></script>
-<script src="game.js"></script>
+<script src="js/game.js"></script>
 <script>
-    var game;
-    $(function () {
-        game = new Game({
-            container: $("#label")
-        });
-        $("#start-btn").click(function () {
-            game.start();
-        });
-        $("#stop-btn").click(function () {
-            game.stop();
-        });
-        $("#dump-btn").click(function () {
-            game.dump();
-        })              ;
+    var game = new Game({
+        fps    : 60,
+        canvas: 'canvas'
     });
+
+
 </script>
 </body>
 </html>
