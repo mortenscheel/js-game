@@ -4,17 +4,47 @@
     <meta charset="UTF-8">
     <title>Home | local.dev</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #canvas {
+            background: black;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .btn-group-wrap {
+            text-align: center;
+        }
+
+        div.btn-group {
+            margin: 0 auto;
+            text-align: center;
+            width: inherit;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <h1>Welcome</h1>
-    <label id="label"></label>
-    <pre id="debug"></pre>
-    <button onclick="game.start()" class="btn btn-default" id="start-btn">Start</button>
-    <button onclick="game.stop()" class="btn btn-default" id="stop-btn">Stop</button>
-    <button onclick="game.dump()" class="btn btn-default" id="dump-btn">Dump</button>
-    <div id="canvas-wrap">
-        <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center">Arkanoid</h1>
+            <div class="btn-group-wrap">
+                <div class="btn-group" style="text-align: center">
+                    <button onclick="game.start()" class="btn btn-default" id="start-btn">Start</button>
+                    <button onclick="game.stop()" class="btn btn-default" id="stop-btn">Stop</button>
+                    <button onclick="game.dump()" class="btn btn-default" id="dump-btn">Dump</button>
+                </div>
+            </div>
+            <hr>
+            <div id="canvas-wrap">
+                <canvas id="canvas" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <pre id="debug"></pre>
+        </div>
     </div>
 
 </div>
@@ -24,10 +54,10 @@
 <script src="game.js"></script>
 <script>
     var game = new Game({
-        fps    : 60,
+        fps   : 60,
         canvas: 'canvas'
     });
-
+    game.start();
 
 </script>
 </body>
