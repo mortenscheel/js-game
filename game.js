@@ -3,6 +3,9 @@
  */
 
 var Game = function (params) {
+/**
+* Ny kommentar
+*/
 	var self = this;
 	this.fps = params.fps || 60;
 	this.board = new Board(params.canvas);
